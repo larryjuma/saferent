@@ -1,0 +1,212 @@
+:root {
+  --pc-card-radius: 16px;
+  --pc-soft-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  --pc-hover-shadow: 0 14px 40px rgba(0, 0, 0, 0.15);
+
+  --pc-accent: linear-gradient(135deg, #2563eb, #10b981); /* button gradient */
+  --pc-price-color: #10b981;      /* green price like BNB theme */
+  --pc-meta-color: #374151;       /* subtle dark gray for meta info */
+  --pc-title-color: #1e3a8a;      /* deep blue for title */
+  --pc-text-muted: #6b7280;       /* gray for location */
+  --pc-bg-white: #ffffff;         /* card background */
+}
+
+
+/* ===============================
+   CARD
+================================ */
+.pc-card {
+  background: var(--pc-bg-white);
+  border-radius: var(--pc-card-radius);
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: var(--pc-soft-shadow);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 440px;
+  animation: pc-fade-in 0.5s ease forwards;
+}
+
+.pc-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--pc-hover-shadow);
+}
+
+.pc-card:active {
+  transform: scale(0.98);
+}
+
+/* ===============================
+   IMAGE
+================================ */
+.pc-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 180px;
+  flex-shrink: 0;
+  border-radius: var(--pc-card-radius) var(--pc-card-radius) 0 0;
+}
+
+.pc-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.pc-card:hover .pc-image {
+  transform: scale(1.08);
+}
+
+.pc-image-count {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+}
+
+/* ===============================
+   CONTENT
+================================ */
+.pc-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* footer sticks to bottom */
+  padding: 16px 18px;
+  flex: 1;
+  background: var(--pc-bg-white);
+}
+
+.pc-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* TITLE */
+.pc-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--pc-title-color);
+  line-height: 1.3;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.3s ease;
+}
+
+/* LOCATION */
+.pc-location {
+  font-size: 0.85rem;
+  color: var(--pc-text-muted);
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* META */
+.pc-meta {
+  display: flex;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--pc-meta-color);
+  margin-top: 2px;
+}
+
+.pc-meta span::after {
+  content: "•";
+  position: absolute;
+  right: -9px;
+  color: #9ca3af;
+}
+
+.pc-meta span:last-child::after {
+  content: "";
+}
+
+/* ===============================
+   FOOTER
+================================ */
+.pc-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+}
+
+/* PRICE */
+.pc-price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: red;
+}
+
+/* BUTTON */
+.pc-btn {
+  background: var(--pc-accent);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.pc-btn:hover {
+  background: #1d3557;
+  transform: translateY(-1px);
+}
+
+/* ===============================
+   ANIMATIONS
+================================ */
+@keyframes pc-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 900px) {
+  .pc-card {
+    min-height: 380px;
+  }
+
+  .pc-image-wrapper {
+    height: 160px;
+  }
+}
+
+@media (max-width: 600px) {
+  .pc-card {
+    min-height: 340px;
+  }
+
+  .pc-image-wrapper {
+    height: 140px;
+  }
+
+  .pc-title {
+    font-size: 1rem;
+  }
+
+  .pc-location {
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,168 @@
+/* ===============================
+   DASHBOARD PAGE
+================================ */
+.dashboard-page {
+  min-height: 100vh;
+  padding: 2.5rem 1.5rem;
+  background: linear-gradient(135deg, #1e3a8a, #10b981);
+  font-family: 'Inter', 'Roboto', sans-serif;
+  animation: fadeIn 0.6s ease;
+}
+
+/* Title */
+.dashboard-page h1 {
+  color: #f9fafb;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  text-align: center;
+  animation: fadeDown 0.7s ease;
+}
+
+/* ===============================
+   GRID
+================================ */
+.dashboard-grid {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.8rem;
+}
+
+/* ===============================
+   GLASS CARD
+================================ */
+.dashboard-property-card {
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  animation: cardFloat 0.6s ease;
+}
+
+.dashboard-property-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 28px 55px rgba(0,0,0,0.35);
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+
+/* Tenant action */
+.request-btn {
+  width: 88%;
+  margin: 0.8rem auto 1rem;
+  display: block;
+  padding: 0.65rem;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.request-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.45);
+}
+
+.dashboard-add-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+
+/* Landlord actions */
+.landlord-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 1rem 1.2rem;
+  gap: 0.6rem;
+}
+
+.edit-btn,
+.delete-btn {
+  flex: 1;
+  border: none;
+  padding: 0.55rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Edit */
+.edit-btn {
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+  color: white;
+}
+
+.edit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(34, 197, 94, 0.4);
+}
+
+/* Delete */
+.delete-btn {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+}
+
+.delete-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(239, 68, 68, 0.4);
+}
+
+/* ===============================
+   STATES
+================================ */
+.dashboard-loading,
+.dashboard-error {
+  text-align: center;
+  color: #f9fafb;
+  font-size: 1.1rem;
+  padding: 2rem;
+}
+
+/* ===============================
+   ANIMATIONS
+================================ */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes cardFloat {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===============================
+   MOBILE
+================================ */
+@media (max-width: 600px) {
+  .dashboard-page {
+    padding: 2rem 1rem;
+  }
+
+  .dashboard-page h1 {
+    font-size: 1.6rem;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}

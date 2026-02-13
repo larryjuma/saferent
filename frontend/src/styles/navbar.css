@@ -1,0 +1,168 @@
+/* =========================
+   NAVBAR (GLASS THEME)
+========================= */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  animation: slideDown 0.5s ease;
+}
+
+/* CONTAINER */
+.navbar-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0.9rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+.logo {
+  font-size: 1.55rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #60a5fa, #34d399);
+  background-clip: text;           /* Standard property for all modern browsers */
+  -webkit-background-clip: text;   /* WebKit prefix for Safari/Chrome */
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+}
+
+/* LINKS */
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+/* LINK BASE */
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  color: #e5e7eb;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* HOVER */
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+/* UNDERLINE ANIMATION */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(135deg, #60a5fa, #34d399);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ACTIVE LINK */
+.nav-links a.active {
+  color: #34d399;
+}
+
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* PRIMARY BUTTON */
+.btn-primary {
+  background: linear-gradient(135deg, #2563eb, #10b981);
+  color: white !important;
+  padding: 0.45rem 1.1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 16px 35px rgba(0,0,0,0.45);
+}
+
+/* MENU ICON */
+.menu-icon {
+  display: none;
+  font-size: 1.9rem;
+  color: #f9fafb;
+  cursor: pointer;
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 5%;
+    width: 200px;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(16px);
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    display: none;
+    animation: fadeScale 0.35s ease;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 0.5rem 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

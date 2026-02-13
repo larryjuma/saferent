@@ -1,0 +1,105 @@
+.add-property-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* vertically center on page */
+  padding: 2rem;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e3a8a, #10b981);
+  font-family: 'Inter', sans-serif;
+}
+
+.add-property-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem 2rem;
+  border-radius: 20px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* slightly tighter spacing */
+}
+
+.add-property-card h2 {
+  margin-bottom: 1rem;
+  color: #1d3557;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.add-property-card input,
+.add-property-card select,
+.add-property-card textarea {
+  padding: 0.5rem 0.8rem; /* smaller padding to normalize height */
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  width: 100%;
+  font-size: 0.95rem;
+  transition: border-color 0.3s;
+}
+
+.add-property-card input:focus,
+.add-property-card select:focus,
+.add-property-card textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.add-property-card textarea {
+  resize: vertical;
+  min-height: 70px; /* slightly smaller */
+}
+
+.bed-bath-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.add-property-card button {
+  background: #2563eb;
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.5rem 1.2rem; /* smaller vertical padding, reasonable horizontal */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  width: fit-content;
+  display: block;
+  margin: 1rem auto 0; /* center horizontally */
+}
+
+.add-property-card button:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+.add-property-image-preview {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  border: 1px solid #e2e8f0;
+}
+
+.form-error {
+  color: #ef4444;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .add-property-card {
+    padding: 1.5rem;
+    gap: 0.6rem;
+  }
+  .bed-bath-row {
+    flex-direction: column;
+  }
+  .add-property-image-preview {
+    height: 150px;
+  }
+}

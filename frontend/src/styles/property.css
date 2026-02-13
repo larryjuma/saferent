@@ -1,0 +1,230 @@
+/* =========================
+   PAGE WRAPPER
+========================= */
+.prop-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e3a8a, #10b981);
+  padding-bottom: 4rem;
+  font-family: "Inter", sans-serif;
+}
+
+/* =========================
+   HERO CAROUSEL
+========================= */
+.prop-hero {
+  position: relative;
+  width: 100%;
+  height: 65vh;
+  overflow: hidden;
+}
+
+.prop-slider {
+  display: flex;
+  height: 100%;
+  transition: transform 0.6s ease-in-out;
+}
+
+.prop-slide {
+  min-width: 100%;
+  height: 100%;
+}
+
+.prop-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay */
+.prop-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 2rem 3rem;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.6),
+    transparent
+  );
+  color: white;
+}
+
+.prop-overlay h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.prop-overlay p {
+  font-size: 1.1rem;
+}
+
+/* Arrows */
+.prop-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  font-size: 2rem;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 5;
+}
+
+.prop-arrow.left {
+  left: 20px;
+}
+
+.prop-arrow.right {
+  right: 20px;
+}
+
+.prop-arrow:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* =========================
+   THUMBNAILS
+========================= */
+.prop-thumbnails {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem auto;
+  flex-wrap: wrap;
+}
+
+.prop-thumb {
+  width: 100px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.3s ease;
+}
+
+.prop-thumb:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.active-thumb {
+  opacity: 1;
+  border: 3px solid #10b981;
+}
+
+/* =========================
+   DETAILS SECTION
+========================= */
+.prop-container {
+  max-width: 1200px;
+  margin: 2rem auto 0;
+  padding: 1.5rem;
+}
+
+.prop-info {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  animation: fadeUp 0.6s ease;
+}
+
+.prop-info h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: #1e3a8a;
+}
+
+/* PRICE - RED */
+.prop-price {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #e63946;
+  margin-bottom: 1.5rem;
+}
+
+/* META */
+.prop-meta {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.prop-meta div {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.prop-meta strong {
+  font-size: 1.2rem;
+  color: #1e3a8a;
+}
+
+/* DESCRIPTION */
+.prop-description {
+  line-height: 1.7;
+  color: #1f2937;
+  margin-bottom: 2rem;
+}
+
+/* BUTTON */
+.prop-request-btn {
+  padding: 0.9rem 2rem;
+  background: linear-gradient(135deg, #2563eb, #10b981);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.prop-request-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .prop-hero {
+    height: 45vh;
+  }
+
+  .prop-overlay h1 {
+    font-size: 1.8rem;
+  }
+
+  .prop-info {
+    padding: 1.8rem;
+  }
+
+  .prop-meta {
+    gap: 1rem;
+  }
+
+  .prop-thumb {
+    width: 80px;
+    height: 60px;
+  }
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

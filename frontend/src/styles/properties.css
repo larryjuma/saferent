@@ -1,0 +1,131 @@
+/* ===============================
+   PAGE WRAPPER
+================================ */
+.properties-wrapper {
+  min-height: calc(100vh - 70px);
+  padding: 3rem 1.5rem;
+  background: linear-gradient(135deg, #1e3a8a, #10b981);
+}
+
+/* ===============================
+   HERO
+================================ */
+.properties-hero {
+  text-align: center;
+  color: #f9fafb;
+  margin-bottom: 2rem;
+  animation: fadeDown 0.8s ease;
+}
+
+.properties-hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.properties-hero p {
+  color: #e5e7eb;
+  margin-top: 0.6rem;
+  font-size: 1rem;
+}
+
+/* ===============================
+   GLASS CONTAINER
+================================ */
+.properties-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 22px;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+/* ===============================
+   GRID
+================================ */
+.properties-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.8rem;
+  align-items: start; /* ensures cards stretch properly */
+}
+
+/* ===============================
+   STATES
+================================ */
+.page-state {
+  text-align: center;
+  color: #f9fafb;
+}
+
+.error {
+  color: #fecaca;
+}
+
+/* ===============================
+   ANIMATIONS
+================================ */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =================================================
+   📱 MOBILE PHONES (≤ 600px)
+================================================= */
+@media (max-width: 600px) {
+  .properties-wrapper {
+    padding: 2rem 1rem;
+  }
+
+  .properties-hero h1 {
+    font-size: 1.7rem;
+  }
+
+  .properties-hero p {
+    font-size: 0.95rem;
+  }
+
+  .properties-container {
+    padding: 1.2rem;
+    border-radius: 16px;
+  }
+
+  .properties-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+}
+
+/* =================================================
+   📲 TABLETS (601px – 900px)
+================================================= */
+@media (min-width: 601px) and (max-width: 900px) {
+  .properties-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =================================================
+   🖥️ DESKTOP
+================================================= */
+@media (min-width: 901px) {
+  .properties-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* =================================================
+   🖥️ LARGE SCREENS (≥ 1400px)
+================================================= */
+@media (min-width: 1400px) {
+  .properties-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
